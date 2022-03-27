@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 
 const Search = () => {
@@ -6,7 +7,7 @@ const Search = () => {
     const getProducts = async (e) => {
         const name = e.target.elements.name.value;
 
-        const response = await fetch(`${url}`);
+        const response = await axios(`${url}`);
         const data = await response.json();
 
         e.preventDefault();

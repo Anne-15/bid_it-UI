@@ -18,10 +18,10 @@ const Tenders = () => {
   useEffect = (() => {
     fetchData()
   }, [])
-  
+
   return (
     <section className='stories'>
-      {hits.map((bid) => {
+      {tender.map((bid) => {
         const {id, tenderName, services, closingDate} = bid
         return(
           <article key={id} className='story'>
