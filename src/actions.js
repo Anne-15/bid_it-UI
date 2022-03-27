@@ -1,0 +1,5 @@
+export const SET_LOADING = 'SET_LOADING'
+export const SET_BIDS = 'SET_BIDS'
+export const REMOVE_BIDS = 'REMOVE_BIDS'
+export const HANDLE_PAGE = 'HANDLE_PAGE'
+export const HANDLE_SEARCH = 'HANDLE_SEARCH'
