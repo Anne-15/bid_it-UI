@@ -8,8 +8,10 @@ function App() {
   return (
     <>
       <Navbar/>
+
       <Search/>
-      {/* <Tenders/> */}
+
+      <Tenders/>
 
     </>
   );
