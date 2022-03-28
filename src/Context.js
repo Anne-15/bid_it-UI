@@ -1,72 +1,55 @@
+// import React, { useContext, useEffect, useState } from 'react'
+// import { useCallback } from 'react';
 
-import axios from 'axios';
-// import React, { useContext, useEffect, useReducer } from 'react'
-// import { HANDLE_SEARCH, SET_BIDS, SET_LOADING } from './actions';
-// import reducer from './reducer';
 
-// const Context = () => {
-//     const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?';
-    
-//     const initialState = {
-//         isLoading: true,
-//         hits: [],
-//         query: 'react',
-//         page: 0,
-//         nbpages: 0,
-//     }
-    
-//     const AppContext = React.createContext()
+// const url = 'http://localhost:5000/tenders/list';
 
-//     const AppProvider = ({children}) => {
-//         const [state, dispatch] = useReducer(reducer, initialState);
+// const AppContext = React.createContext()
 
-//         const fetchBids = async (url) => {
-//             dispatch({ type: SET_LOADING })
-//             try {
-//                 const response = await fetch(url);
-//                 const data = await response.json();
-//                 dispatch({
-//                     type: SET_BIDS,
-//                     payload: { hits: data.hits, nbpages: data.nbpages },
+// const AppProvider = ({children}) => {
+//     const [loading, setLoading] = useState(true);
+//     const [search, setSearch] = useState('a');
+//     const [tenderList, setTenderList] = useState([]);
+
+//     const fetchBids = async () => {
+//         try {
+//             const response = await fetch(url);
+//             const data = await response.json();
+//             const {bid} = data;
+//             if(bid){
+//                 const newBid = bid.map((item) => {
+//                     const {id, tenderName, services, closingDate} = item;
+//                     <article key={id} className='story'>
+//                         <h4 className='title'>{tenderName}</h4>
+//                         <p className='info'>{services}</p>
+//                         <p className='info'>{closingDate}</p>
+//                     </article>
 //                 })
-//             } catch(error) {
-//                 console.log(error);
+//                 setTenderList(newBid);
+//             } else {
+//                 setTenderList([])
 //             }
+//             setLoading(false)
+//             // console.log(data)
+//         } catch (error) {
+//             console.log(error);
+//             setLoading(false);
 //         }
 //     }
+//     fetchBids();
 
-//     const handleSearch = (query) => {
-//         dispatch({ type: HANDLE_SEARCH, payload: query});
-//     }
-
-//     useEffect(() => {
-//         fetchBids(`${API_ENDPOINT}query = ${state.query}&page=${state.page}`)
-//     }, [state.query, state.page])
-
-//     return (
-//     <AppContext.Provider value={{
-//         ...state,
-//         handleSearch
+//     return <AppContext.Provider value={{
+//         loading,
+//         tenderList,
+//         setSearch 
 //     }}>
-//         {childern}
+//         {children}
 //     </AppContext.Provider>
-//     )
 // }
 
-// //make sure use
+
 // export const useGlobalContext = () => {
 //     return useContext(AppContext);
 // }
 
-// // export default Context
-
-// export { AppContext, AppProvider}
-
-axios({
-    method: 'get',
-    url: 'https://hn.algolia.com/api/v1/search?',
-    responseType: 'stream'
-})
-    .then(function(response){
-        response.data.pipe(fs.createWriteStream)
-    })
+// export { AppContext, AppProvider }

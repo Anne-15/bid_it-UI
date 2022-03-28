@@ -1,16 +1,7 @@
 import React from 'react'
 
 const Search = () => {
-    // const url = 'http://localhost:5000/tenders/list';
-    // const [ tender, setTender ] = useState([]);
-
-    // const getProducts = async (e) => {
-    //     const response = await axios.get(url).then((bids) => setTender(bids));
-    //     const data = await response.json();
-
-    //     e.preventDefault();
-    //     console.log(data);
-    // }
+  // const {setSearch} = useGlobalContext();
 
   return (
       <section className='section search'>

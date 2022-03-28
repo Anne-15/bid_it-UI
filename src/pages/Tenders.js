@@ -1,34 +1,36 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios';
 // import axios from "axios";
 
 const Tenders = () => {
-  const url = "http://localhost:5000/tenders/list";
-  
-  const [tender, setTender] = useState([]);
+    const url = "http://localhost:5000/tenders/list";
+    const [tender, setTender] = useState([]);
 
-  const fetchData = async() => {
-    try {
-      const response = await fetch(url);
-      const data = response.json();
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
+    async function fetchBids() {
+    const response = await axios.get(url).then((res) => res.data);
+    return response;
   }
-  const tenders = fetchData()
-  setTender(tenders)
-  // data = Array.from(tenders);
-  // console.log(tenders);
 
-  return (
+  // removeList = () => {
+  // }
+
+  useEffect(() => {
+    fetchBids().then((res) => setTender(res));
+  }, []);
+
+  fetchBids();
+  console.log(tender);
+
+  return(
     <section className='stories'>
-      {tenders.map((bid) => {
+      {tender.map((bid) => {
         const {id, tenderName, services, closingDate} = bid;
-        (
+        return (
           <article key={id} className='story'>
             <h4 className='title'>{tenderName}</h4>
-            <p className='info'>{services}</p>
-            <p className='info'>{closingDate}</p>
+            <p className='info'>Services: {services}</p>
+            <p className='info'>Closing Date: {closingDate}</p>
+            <button className='remove-btn'>remove</button>
           </article>
         )
       })}

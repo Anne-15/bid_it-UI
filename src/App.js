@@ -1,20 +1,17 @@
 import './index.css';
-import Navbar from './pages/Navbar';
-import Search from './pages/Search';
+import Navbar from './components/Navbar';
+// import Search from './components/Search';
 import Tenders from './pages/Tenders';
+import Search from './components/Search';
 
-function App() {
+export default function App() {
 
   return (
     <>
       <Navbar/>
-
       <Search/>
-
       <Tenders/>
-
     </>
   );
 }
 
-export default App;

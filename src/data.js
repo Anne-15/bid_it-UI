@@ -1,3 +1,5 @@
+import Suppliers from "./pages/Suppliers";
+import Tenders from "./pages/Tenders";
 export const links = [
     {
         id: 1,
@@ -6,12 +8,12 @@ export const links = [
     },
     {
         id: 2,
-        url: '/suppliers',
+        url: <Suppliers/>,
         text: 'suppliers'
     },
     {
         id: 3,
-        url: '/tenders',
+        url: <Tenders/>,
         text: 'tenders'
     },
     {
@@ -24,12 +26,12 @@ export const links = [
 export const profile = [
     {
         id: 1,
-        url: '/register',
-        text: 'register'
+        url: '/tender',
+        text: 'add a tender'
     },
     {
         id: 2,
-        url: '/login',
-        text: 'login'
+        url: '/company',
+        text: 'add company'
     }
 ]
