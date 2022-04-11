@@ -11,9 +11,6 @@ const Tenders = () => {
     return response;
   }
 
-  // removeList = () => {
-  // }
-
   useEffect(() => {
     fetchBids().then((res) => setTender(res));
   }, []);

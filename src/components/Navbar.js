@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {FaBars} from 'react-icons/fa';
-import { links, profile } from "../data";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false);
@@ -14,25 +14,24 @@ const Navbar = () => {
                 </div>
                 <div className={`${showLinks ? 'links-container show-container' : 'links-container'}`}>
                     <ul className="links">
-                        {links.map((link) => {
-                            const {id, url, text} = link;
-                            return (
-                                <li key={id}>
-                                    <a href={url}>{text}</a>
-                                </li>
-                            );
-                        })}
+                        <li>
+                            <Link to='/'>Tenders</Link>
+                        </li>
+                        <li>
+                            <Link to='/suppliers'>Suppliers</Link>
+                        </li>
+                        <li>
+                            <Link to='/profile'>Profile</Link>
+                        </li>
                     </ul>
                 </div>
                 <ul className="profile">
-                        {profile.map((user) => {
-                            const {id, url, text} = user;
-                            return (
-                                <li key={id}>
-                                    <a href={url}>{text}</a>
-                                </li>
-                            );
-                        })}
+                    <li>
+                        <Link to='/tender/add'>add a tender</Link>
+                    </li>
+                    <li>
+                        <Link to='/company/add'>add a company</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
