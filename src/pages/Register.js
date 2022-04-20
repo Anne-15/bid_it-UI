@@ -21,14 +21,20 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = {
-      fullname: customer.fullname,
+      fullName: customer.fullname,
       email: customer.email,
       password: customer.password,
-      confirmPassword: customer.confirmPassword
+      //confirmPassword: customer.confirmPassword
     };
-    
-    axios.post(url, userData)
-    .then((response) => {
+
+    const ress = axios({
+      method: 'POST',
+      headers: {
+        "Access-Control-Allow-Origin":"*"
+      },
+      url:url,
+      data:userData
+    }).then((response) => {
       console.log(response.status);
       console.log(response.data);
     })
@@ -40,6 +46,22 @@ const Register = () => {
         console.log(error);
       }
     });
+
+    
+    
+    // axios.post(url, userData)
+    // .then((response) => {
+    //   console.log(response.status);
+    //   console.log(response.data);
+    // })
+    // .catch((error) => {
+    //   if(error.res){
+    //     console.log(error.response);
+    //     console.log("Server responded");
+    //   } else {
+    //     console.log(error);
+    //   }
+    // });
   };
 
   return(
