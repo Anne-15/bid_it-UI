@@ -101,16 +101,7 @@ const AddTender = () => {
                     </Link>
                   </button>
               </div>
-              {/* <a href="/login"> Already have an account </a> */}
           </form>
-          {/* <div className="social-media">
-              <h5>Sign up with social media</h5>
-              <div className="social-icons">
-                  <a href="/"><i className="icon-social-facebook" title="Facebook"></i></a>
-                  <a href="/"><i className="icon-social-google" title="Google"></i></a>
-                  <a href="/"><i className="icon-social-twitter" title="Twitter"></i></a>
-              </div>
-          </div> */}
      </div>
   )
 }

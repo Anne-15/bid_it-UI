@@ -1,7 +1,7 @@
 import './index.css';
 import Navbar from './components/Navbar';
 import Tenders from './pages/Tenders';
-import Search from './components/Search';
+// import Search from './components/Search';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Suppliers from './pages/Suppliers';
 import Profile from './pages/Profile.js';
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar/>
-      <Search/>
+      {/* <Search/> */}
       <Routes>
         <Route exact path = '/' element = {<Tenders/>} />
         <Route path='/suppliers' element = {<Suppliers/>} />

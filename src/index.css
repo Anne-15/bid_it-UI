@@ -272,12 +272,13 @@ Story
 ===============
 */
 .stories {
-  width: 90vw;
+  width: 80vw;
   max-width: var(--max-width);
   margin: 0 auto;
   margin-bottom: 5rem;
   display: grid;
   gap: 2rem;
+  padding: 20px;
 }
 
 @media screen and (min-width: 992px) {

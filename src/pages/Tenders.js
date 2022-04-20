@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import axios from "axios";
 
 const Tenders = () => {
     const url = "http://localhost:5000/tenders/list";
@@ -19,7 +18,7 @@ const Tenders = () => {
   fetchBids();
   console.log(tender);
 
-  return(
+  return (
     <section className='stories'>
       {tender.map((bid) => {
         const {id, tenderName, services, closingDate} = bid;
@@ -31,7 +30,6 @@ const Tenders = () => {
             <Link to={`/tender/${id}`} className="btn btn-primary">
               Details
             </Link>
-            {/* <button className='remove-btn'>remove</button> */}
           </article>
         )
       })}
