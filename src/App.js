@@ -7,6 +7,8 @@ import Suppliers from './pages/Suppliers';
 import Profile from './pages/Profile.js';
 import AddTender from './pages/AddTender';
 import AddCompany from './pages/AddCompany';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 export default function App() {
 
@@ -20,6 +22,8 @@ export default function App() {
         <Route path='/profile' element = {<Profile/>} />
         <Route path='/tender/add' element = {<AddTender/>} />
         <Route path='/company/add' element = {<AddCompany/>} />
+        <Route path='/register' element = {<Register/>} />
+        <Route path='/login' element = {<Login/>} />
       </Routes>
     </BrowserRouter>
   );
