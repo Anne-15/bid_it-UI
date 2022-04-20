@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 // import axios from "axios";
 
 const Tenders = () => {
@@ -27,7 +28,10 @@ const Tenders = () => {
             <h4 className='title'>{tenderName}</h4>
             <p className='info'>Services: {services}</p>
             <p className='info'>Closing Date: {closingDate}</p>
-            <button className='remove-btn'>remove</button>
+            <Link to={`/tender/${id}`} className="btn btn-primary">
+              Details
+            </Link>
+            {/* <button className='remove-btn'>remove</button> */}
           </article>
         )
       })}

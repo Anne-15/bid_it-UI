@@ -4,11 +4,11 @@ const Search = () => {
   // const {setSearch} = useGlobalContext();
 
   return (
-      <section className='section search'>
+      <section>
           <form className='search-form'>
             <div className="form-control">
                 <label htmlFor="name"> Search for an order</label>
-                <input type="text" name='name' id='name'/>
+                <input type="text" name='name' id='name' className='form-input'/>
             </div>
           </form>
       </section>

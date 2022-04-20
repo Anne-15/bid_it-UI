@@ -9,6 +9,7 @@ import AddTender from './pages/AddTender';
 import AddCompany from './pages/AddCompany';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import SingleBid from './pages/SingleBid';
 
 export default function App() {
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path='/company/add' element = {<AddCompany/>} />
         <Route path='/register' element = {<Register/>} />
         <Route path='/login' element = {<Login/>} />
+        <Route path='/tender/:id' element = {<SingleBid/>} />
       </Routes>
     </BrowserRouter>
   );

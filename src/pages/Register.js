@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { Link, Navigate } from 'react-router-dom';
+import Tenders from './Tenders';
 
 const Register = () => {
   const url = 'http://localhost:5000/signup';
@@ -27,16 +29,21 @@ const Register = () => {
       //confirmPassword: customer.confirmPassword
     };
 
-    const ress = axios({
+    axios({
       method: 'POST',
       headers: {
         "Access-Control-Allow-Origin":"*"
       },
       url:url,
       data:userData
+
     }).then((response) => {
-      console.log(response.status);
-      console.log(response.data);
+      console.log(response);
+      if(response.data.status === "User created successfully"){
+        //redirect here
+        <Link to={<Tenders/>}/>
+      }
+      // console.log(response.data);
     })
     .catch((error) => {
       if(error.res){
