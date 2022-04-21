@@ -10,6 +10,15 @@ const Tenders = () => {
     const response = await axios.get(url).then((res) => res.data);
     return response;
   }
+  // countdown
+  // const useCountdown = (targetDate) => {
+  //   const countDownDate = new Date(targetDate).getTime();
+
+  //   const [countDown, setCountDown] = useState(
+  //     countDownDate - new Date().getTime()
+  //   );
+
+  // }
 
   useEffect(() => {
     fetchBids().then((res) => setTender(res));

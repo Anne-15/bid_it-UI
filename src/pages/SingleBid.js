@@ -29,14 +29,14 @@ const SingleBid = () => {
     async function singlebid() {
       const response = await axios.get(url, id)
         .then((res) => res.data)
-      console.log(response)
+      console.log(response.data)
       if (response) {
         const {
           tenderName: name,
           services: service,
           description: desc,
           closingDate: date
-        } = response[1]
+        } = response[0]
 
         const newOrder = { name, service, desc, date }
         setSingle(newOrder)
@@ -54,22 +54,24 @@ const SingleBid = () => {
       <h2>No orders to be found</h2>
     )
   }
-  const { date, name, service, descr } = single;
+  const { date, name, service, desc } = single;
   return (
     <section className='section'>
       <div className='title'>
         <h2>Bid Details</h2>
         <div className="underline"></div>
       </div>
-      <div className="jobs-center">
+      <div>
 
         {/* job info */}
-        <article className='job-info'>
+        <section className='job-info'>
           <h3>{name}</h3>
           <h4>{service}</h4>
-          <p className='job-date'>{date}</p>
-          <p>{descr}</p>
-        </article>
+          <p className='job-date'>Closing Date: {date}</p>
+          <h3>Job Description</h3>
+          <p>{desc}</p>
+          
+        </section>
       </div>
     </section>
   )
