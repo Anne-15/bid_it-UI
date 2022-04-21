@@ -4,7 +4,7 @@ import { Link, Navigate } from 'react-router-dom';
 import Tenders from './Tenders';
 
 const Register = () => {
-  const url = 'http://localhost:5000/signup';
+  const url = 'http://localhost:6060/signup';
   const [customer, setCustomer] = useState({
     fullname: "",
     email: "",

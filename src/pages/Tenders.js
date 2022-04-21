@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Tenders = () => {
-    const url = "http://localhost:5000/tenders/list";
+    const url = "http://localhost:6060/tenders/list";
     const [tender, setTender] = useState([]);
 
     async function fetchBids() {

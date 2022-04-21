@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const AddTender = () => {
-  const url = 'http://localhost:5000/tenders';
+  const url = 'http://localhost:6060/tenders';
   const [order, setOrder] = useState({
     tenderName:"",
     services:"",

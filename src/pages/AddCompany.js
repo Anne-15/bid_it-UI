@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const AddCompany = () => {
-  const url = 'http://localhost:5000/suppliers';
+  const url = 'http://localhost:6060/suppliers';
   const [company, setCompany] = React.useState({
     companyName:"",
     category:"",

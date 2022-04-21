@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 const SingleBid = () => {
-  const url = 'http://localhost:5000/tenders/list'
+  const url = 'http://localhost:6060/tenders/list'
   const [single, setSingle] = useState(null);
   const {id} = useParams()
 
