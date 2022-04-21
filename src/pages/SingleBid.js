@@ -4,22 +4,57 @@ import { useParams } from 'react-router-dom';
 
 const SingleBid = () => {
   const url = 'http://localhost:5000/tenders/list'
-  const [single, setSingle] = useState([]);
+  const [single, setSingle] = useState(null);
   const {id} = useParams()
 
-  async function singlebid(){
-    const response = axios.get(url, id).then((res) => res.data);
-    return response;
-  }
+  // async function singlebid(){
+  //   const response = axios.get(url, id).then((res) => res.data)
+  //   console.log(response)
+  //   if (response) {
+  //     const {
+  //       closingDate: date,
+  //       description: descr,
+  //       services: service,
+  //       tenderName: name
+  //     } = response[0]
+  //     const newOrder = { date, descr, service, name };
+  //     setSingle(newOrder)
+  //   } else{
+  //     setSingle(null);
+  //   }
+  //   // return response;
+  // }
 
   useEffect(() => {
-    singlebid().then((res) => setSingle(res))
+    async function singlebid() {
+      const response = await axios.get(url, id)
+        .then((res) => res.data)
+      console.log(response)
+      if (response) {
+        const {
+          tenderName: name,
+          services: service,
+          description: desc,
+          closingDate: date
+        } = response[1]
+
+        const newOrder = { name, service, desc, date }
+        setSingle(newOrder)
+      } else {
+        setSingle(null)
+      }
+    }
+    singlebid();
   },[id]);
   
-  singlebid();
+  // singlebid();
   console.log(single);
-
-  const [tenderName, services, description, closingDate] = single;
+  if (!single) {
+    return (
+      <h2>No orders to be found</h2>
+    )
+  }
+  const { date, name, service, descr } = single;
   return (
     <section className='section'>
       <div className='title'>
@@ -30,10 +65,10 @@ const SingleBid = () => {
 
         {/* job info */}
         <article className='job-info'>
-          <h3>{tenderName}</h3>
-          <h4>{services}</h4>
-          <p className='job-date'>{closingDate}</p>
-          <p className='job-desc'>{description}</p>
+          <h3>{name}</h3>
+          <h4>{service}</h4>
+          <p className='job-date'>{date}</p>
+          <p>{descr}</p>
         </article>
       </div>
     </section>
