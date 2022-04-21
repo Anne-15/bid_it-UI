@@ -70,7 +70,7 @@ const SingleBid = () => {
           <p className='job-date'>Closing Date: {date}</p>
           <h3>Job Description</h3>
           <p>{desc}</p>
-          
+          <button className='btn btn-primary'>Apply</button>
         </section>
       </div>
     </section>
