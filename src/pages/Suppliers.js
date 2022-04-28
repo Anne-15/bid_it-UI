@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 const Suppliers = () => {
-  const url = 'http://localhost:5000/suppliers/list';
+  const url = 'http://localhost:6060/suppliers/list';
   const [company, setCompany] = useState([]);
 
   async function getCompanies(){
@@ -19,12 +19,13 @@ const Suppliers = () => {
   return (
     <section className='stories'>
       {company.map((fav) => {
-        const {id, companyName, category, sector} = fav;
+        const {id, companyName, category, sector, about} = fav;
         return (
           <article key={id} className='story'>
             <h4 className='title'>{companyName}</h4>
             <p className='info'>Category: {category}</p>
             <p className='info'>Sector/Department: {sector}</p>
+            <p>About us: {about}</p>
           </article>
         )
       })}
